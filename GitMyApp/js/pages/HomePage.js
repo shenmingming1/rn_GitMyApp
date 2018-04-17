@@ -22,6 +22,7 @@ import {
 import TabNavigator from 'react-native-tab-navigator'
 import PopularPage from './PopularPage'
 import AsyncStorageTest from '../../AsyncStorageTest'
+import MyPage from './My/MyPage'
 export default class HomePage extends Component {
     // 构造
     // 构造
@@ -74,8 +75,8 @@ export default class HomePage extends Component {
                   renderIcon={() => <Image style={styles.image} source={require('../../res/images/ic_trending.png')} />}
                   renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'yellow'}]} source={require('../../res/images/ic_trending.png')} />}
                   // renderBadge={() => <CustomBadgeView />}
-                  onPress={() => this.setState({ selectedTab: 'profile' })}>
-                  <View style={styles.page2}></View>
+                  onPress={() => this.setState({ selectedTab: 'tb_my' })}>
+                  <MyPage {...this.props}/>
               </TabNavigator.Item>
           </TabNavigator>
             </View>
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
         flex:1,
         // justifyContent:'center',
         // alignItems:'center',
-        backgroundColor:'red',
+        backgroundColor:'yellow',
     },
     page2:{
         flex:1,
