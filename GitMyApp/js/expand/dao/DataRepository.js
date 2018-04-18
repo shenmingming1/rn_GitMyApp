@@ -1,6 +1,6 @@
 export default class DataRepository {
     fetchNetRepository(url){
-        return new Promise(((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             fetch(url)
                 .then(response=>response.json())
                 .then(result=>{
@@ -10,6 +10,6 @@ export default class DataRepository {
                     reject(error);
                 })
 
-        }))
+        })
     }
 }
